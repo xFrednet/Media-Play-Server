@@ -1,0 +1,13 @@
+[package]
+name = "mov_play_serv"
+version = "0.1.0"
+authors = ["xFrednet <xFrednet@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.6"
+rocket_contrib = "0.4.6"
+serde = { version = "1.0", features = ["derive"] }
+tungstenite = "0.12.0"

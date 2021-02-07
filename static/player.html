@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <div id="app">
+        <h1>Controls:</h1>
+        
+        <div>
+            <input id="set-time-slider" type="range" min="0" max="3599" :value="setTimeTime" class="slider" v-on:input="onSetTimeSliderChange" style="display: block; width: 90%;">
+            <input id="set-time-text-min" type="number" min="0" max="59" :value="Math.floor(setTimeTime / 60)" v-on:input="onSetTimeTextChange"> <label>Min</label>
+            <input id="set-time-text-sec" type="number" min="0" max="59" :value="setTimeTime % 60" v-on:input="onSetTimeTextChange"> <label>Sec</label>
+            <button v-on:click="sendSetTime">Set Time</button>
+        </div>
+        <hr style="margin: 0.5em;">
+
+        <button v-on:click="sendPlay">Play</button>
+        <button v-on:click="sendStop">Stop</button>
+
+        <hr style="margin: 0.5em;">
+
+        <div>
+            <b>Websocket status:</b> "{{ socketStatus }}"
+        </div>
+        <div>
+            <h4>Log:</h4>
+            <pre>{{ socketLog }}</pre>
+        </div>
+    </div>
+
+
+    <script src="/static/player.js"></script>
+
+</body> 
+</html>

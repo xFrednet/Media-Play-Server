@@ -1,0 +1,5 @@
+/target
+Cargo.lock
+
+# We don't want to commit our testing videos ^^
+/static/mov/**
